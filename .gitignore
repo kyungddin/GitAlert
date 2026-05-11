@@ -1,0 +1,11 @@
+# dir
+.venv
+.test
+
+# format
+*.ico
+*.spec
+
+# file
+docs.md
+config.json
