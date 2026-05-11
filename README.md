@@ -3,12 +3,12 @@
 
 
 ## Install & Execution
-- 1. Use Git Clone to download files
+1. Use Git Clone to download files
     ```bash
     git clone https://github.com/kyungddin/GitAlert.git
     ```
-- 2. Execute GitAlert.exe
-- 3. Enter your Bitbucket Info and Start!
+2. Execute GitAlert.exe
+3. Enter your Bitbucket Info and Start!
 
 
 ## Structure
