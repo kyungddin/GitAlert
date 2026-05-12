@@ -1,15 +1,21 @@
 import json
 import os
+import sys
 
-CONFIG_PATH = os.path.join(os.path.dirname(__file__), "config.json")
+def get_base_dir() -> str:
+    if getattr(sys, "frozen", False):
+        return os.path.dirname(sys.executable)
+    return os.path.dirname(os.path.abspath(__file__))
+
+CONFIG_PATH = os.path.join(get_base_dir(), "config.json")
 
 DEFAULT_CONFIG = {
     "url": "",
     "project": "",
     "repo": "",
     "token": "",
-    "branches": ["main"],
-    "polling_interval": 60,
+    "branches": ["master"],
+    "polling_interval": 30,
 }
 
 

@@ -25,7 +25,7 @@ class MonitorThread(QThread):
         interval = cfg["polling_interval"]
         repo     = cfg["repo"]
 
-        self.log.emit(f"감시 시작: {repo} / {branches} (주기: {interval}s)")
+        #self.log.emit(f"감시 브랜치: {branches} (주기: {interval}s)")
 
         # 브랜치별 기준 커밋 초기화
         last_commits = {}
@@ -35,7 +35,7 @@ class MonitorThread(QThread):
             if commit:
                 short_id = commit["id"][:7]
                 msg = commit["message"].split("\n")[0]
-                self.log.emit(f"[{branch}] 기준 커밋: {short_id} - {msg}")
+                self.log.emit(f"[branch: {branch}] 마지막 커밋: {short_id} - {msg}")
 
         # 폴링 루프
         while self._running:
@@ -51,9 +51,9 @@ class MonitorThread(QThread):
                 if latest and last and latest["id"] != last["id"]:
                     author = latest["author"]["name"]
                     msg    = latest["message"].split("\n")[0]
-                    self.log.emit(f"[{branch}] 새 커밋 감지: {author} - {msg}")
+                    self.log.emit(f"[branch: {branch}] 새 커밋 감지: {author} - {msg}")
                     self.alert.emit(
-                        f"📌 [{repo}/{branch}] Push 알림",
+                        f"[{repo}/{branch}] Push 알림",
                         f"{author}: {msg}",
                     )
                     last_commits[branch] = latest
