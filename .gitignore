@@ -2,6 +2,7 @@
 .venv
 .test
 build
+__pycache__
 
 # format
 *.json
