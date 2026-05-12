@@ -1,8 +1,10 @@
 # dir
 .venv
 .test
+build
 
 # format
+*.json
 *.ico
 *.spec
 
