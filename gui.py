@@ -453,21 +453,21 @@ class SetupDialog(QDialog):
             return l
 
         self.edit_url     = QLineEdit()
-        self.edit_url.setPlaceholderText("https://bitbucket.example.com")
+        self.edit_url.setPlaceholderText("http://bitbucket.domain.co.kr:port")
         self.edit_project = QLineEdit()
-        self.edit_project.setPlaceholderText("PROJECT")
+        self.edit_project.setPlaceholderText("PROJECT_NAME")
         self.edit_repo    = QLineEdit()
-        self.edit_repo.setPlaceholderText("my-repo")
+        self.edit_repo.setPlaceholderText("REPOSITORY_NAME")
         self.edit_token   = QLineEdit()
-        self.edit_token.setPlaceholderText("Bearer 토큰")
+        self.edit_token.setPlaceholderText("Your Access Token")
         self.edit_token.setEchoMode(QLineEdit.Password)
         self.spin_interval = QSpinBox()
         self.spin_interval.setRange(10, 3600)
         self.spin_interval.setSuffix("  초")
 
-        form.addRow(lbl("Bitbucket URL"), self.edit_url)
-        form.addRow(lbl("Project Key"),   self.edit_project)
-        form.addRow(lbl("Repository"),    self.edit_repo)
+        form.addRow(lbl("Git URL"), self.edit_url)
+        form.addRow(lbl("Project Name"),   self.edit_project)
+        form.addRow(lbl("Repository Name"),    self.edit_repo)
         form.addRow(lbl("Access Token"),  self.edit_token)
         form.addRow(lbl("폴링 주기"),      self.spin_interval)
 

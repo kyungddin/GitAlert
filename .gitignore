@@ -1,0 +1,14 @@
+# dir
+.venv
+.test
+build
+__pycache__
+
+# format
+*.json
+*.ico
+*.spec
+
+# file
+docs.md
+config.json

@@ -20,10 +20,10 @@
 
 ## Python and Packages version
 - Python 3.14.3
-- requests 2.33.1
-- winotify 1.1.0
-- PySide6 6.11.0
-- pyinstaller-6.20.0
+    - requests 2.33.1
+    - winotify 1.1.0
+    - PySide6 6.11.0
+    - pyinstaller-6.20.0
 
 
 ## package install
@@ -50,3 +50,8 @@ python -m pip install requests winotify PySide6 pyinstaller
     ```bash
     pyinstaller --onefile --noconsole --icon="git_alert.ico" --distpath . --name "GitAlert" main.py --clean
     ```
+
+    ```bash
+    pyinstaller --onefile --noconsole --distpath . --name "GitAlert" main.py --clean
+    ```
+
